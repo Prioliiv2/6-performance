@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Academia - Laranja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="logo.jpeg" alt="logo" width="100px">
+        <h2>Bem-vindo!</h2>
+        
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" id="user-toggle">USUÁRIO</button>
+            <button class="toggle-btn" id="admin-toggle">ADMINISTRADOR</button>
+        </div>
+
+        <p>Faça login para continuar.</p>
+        
+        <form class="login-form">
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email..." required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Senha..." required>
+            </div>
+            
+            <div class="links-ajuda">
+                <a href="esqueceusenha.html">Esqueceu a senha?</a>
+                <a href="cadastro.html">Cadastre-se</a>
+            </div>
+            
+            <button type="submit" class="login-button">ENTRAR</button>
+            
+            <div class="social-login-separator">
+                <span>ou entre com</span>
+            </div>
+
+            <div class="social-buttons">
+                <button type="button" class="social-btn google">G</button>
+                <button type="button" class="social-btn facebook">f</button>
+            </div>
+        </form>
+    </div>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userToggle = document.getElementById('user-toggle');
+            const adminToggle = document.getElementById('admin-toggle');
+            const loginForm = document.querySelector('.login-form');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+
+            // --- Credenciais Fictícias ---
+            const MOCK_USER_EMAIL = 'aluno@academia.com';
+            const MOCK_USER_PASS = '123456';
+            const MOCK_ADMIN_EMAIL = 'admin@academia.com';
+            const MOCK_ADMIN_PASS = 'admin123';
+            // ------------------------------
+            
+            let isUserMode = true; // Define o modo inicial como Usuário
+
+            // Lógica para alternar entre os modos
+            userToggle.addEventListener('click', function() {
+                userToggle.classList.add('active');
+                adminToggle.classList.remove('active');
+                isUserMode = true;
+                console.log('Modo Usuário selecionado');
+            });
+
+            adminToggle.addEventListener('click', function() {
+                adminToggle.classList.add('active');
+                userToggle.classList.remove('active');
+                isUserMode = false;
+                console.log('Modo Administrador selecionado');
+            });
+
+            // Lógica de Login
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+                
+                const email = emailInput.value;
+                const password = passwordInput.value;
+                
+                let success = false;
+                let message = '';
+                
+                if (isUserMode) {
+                    if (email === MOCK_USER_EMAIL && password === MOCK_USER_PASS) {
+                        success = true;
+                        message = 'Login de Usuário realizado com sucesso! 🎉';
+                    } else {
+                        message = 'Erro: Credenciais de Usuário inválidas. ❌';
+                    }
+                } else { // Modo Administrador
+                    if (email === MOCK_ADMIN_EMAIL && password === MOCK_ADMIN_PASS) {
+                        success = true;
+                        message = 'Login de Administrador realizado com sucesso! ✅';
+                    } else {
+                        message = 'Erro: Credenciais de Administrador inválidas. 🛑';
+                    }
+                }
+
+                // Feedback visual simples usando alert (em um app real, use uma mensagem na tela)
+                alert(message);
+                
+                if (success) {
+                    // Simulação: Redirecionar para a página principal após o login
+                    // window.location.href = isUserMode ? 'dashboard-usuario.html' : 'dashboard-admin.html';
+                    console.log('Redirecionando...');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
