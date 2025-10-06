@@ -1,0 +1,287 @@
+/* Definição de variáveis de cores */
+:root {
+    --primary-orange: #FF8C00; /* Laranja principal */
+    --light-orange: #FFA042;   /* Laranja mais claro para hover */
+    --dark-orange: #CC6F00;    /* Laranja mais escuro */
+    --white: #FFFFFF;
+    --gray-text: #666666;
+    --dark-gray-bg: #282c34; /* Fundo escuro sutil */
+    --input-bg: #f8f8f8;
+    --border-color: #ddd;
+}
+
+/* Estilos globais e fundo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-gray-bg); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-image: url('https://via.placeholder.com/1920x1080/282c34/282c34?text=Fitness+Background'); /* Imagem de fundo opcional, pode substituir por uma de academia */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay; /* Suaviza a imagem com o fundo */
+}
+
+/* Container principal do formulário de login */
+.login-container {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Para garantir que sombras não escapem */
+}
+
+/* Logo/Título do App */
+.logo {
+    font-size: 32px;
+    font-weight: 700; /* Mais negrito */
+    color: var(--primary-orange);
+    margin-bottom: 5px;
+    letter-spacing: 1.5px; /* Espaçamento entre letras */
+}
+
+/* Títulos e textos de boas-vindas */
+h2 {
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+p {
+    color: var(--gray-text);
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+/* Botões de alternância (Usuário/Administrador) */
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden; /* Para bordas arredondadas nos botões internos */
+    border: 1px solid var(--primary-orange);
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px 0;
+    background-color: transparent;
+    border: none;
+    color: var(--primary-orange);
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.toggle-btn:hover:not(.active) {
+    background-color: rgba(255, 140, 0, 0.1); /* Laranja transparente no hover */
+}
+
+.toggle-btn.active {
+    background-color: var(--primary-orange);
+    color: var(--white);
+}
+
+/* Agrupamento de campos de input */
+.input-group {
+    position: relative; /* Para o ícone de placeholder */
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: calc(100% - 24px); /* Ajuste para padding */
+    padding: 12px 12px 12px 12px; /* Espaçamento interno */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: var(--input-bg);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #a0a0a0;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-orange);
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2); /* Sombra de foco laranja */
+    outline: none;
+}
+
+/* Links de ajuda (Esqueceu a senha e Cadastre-se) */
+.links-ajuda {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+
+.links-ajuda a {
+    color: var(--primary-orange);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.links-ajuda a:hover {
+    color: var(--dark-orange);
+    text-decoration: underline;
+}
+
+/* Botão principal de Login */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-orange);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+}
+
+.login-button:hover {
+    background-color: var(--light-orange);
+    transform: translateY(-2px); /* Efeito de "levantar" */
+}
+
+.login-button:active {
+    background-color: var(--dark-orange);
+    transform: translateY(0);
+}
+
+
+/* Separador "ou faça login com" */
+.social-login-separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--gray-text);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.social-login-separator::before,
+.social-login-separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.social-login-separator:not(:empty)::before {
+    margin-right: .8em;
+}
+
+.social-login-separator:not(:empty)::after {
+    margin-left: .8em;
+}
+
+/* Botões de login social */
+.social-buttons {
+    display: flex;
+    justify-content: center; /* Centraliza os botões */
+    gap: 15px;
+}
+
+.social-btn {
+    width: 50px; /* Tamanho fixo para ícones */
+    height: 50px;
+    padding: 0;
+    border-radius: 50%; /* Botão redondo */
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    background-color: var(--white);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-text); /* Cor padrão para o texto */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn.google {
+    color: #DB4437; /* Cor do Google */
+}
+
+.social-btn.facebook {
+    color: #4267B2; /* Cor do Facebook */
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn.google:hover {
+    background-color: #DB4437;
+    color: var(--white);
+}
+
+.social-btn.facebook:hover {
+    background-color: #4267B2;
+    color: var(--white);
+}
+
+/* Estilo para focar na acessibilidade */
+button:focus, a:focus {
+    outline: 2px solid var(--primary-orange);
+    outline-offset: 3px;
+    border-radius: 5px; /* Para melhor visualização do foco */
+}
+
+/* ESTILO DA PÁGINA DO ESQUECI A SENHA */
+
+.instrucao {
+    font-size: 15px;
+    color: var(--gray-text);
+    margin-bottom: 30px; /* Adiciona espaço abaixo da instrução */
+    padding: 0 10px;
+}
+
+/* Ajuste para o link "Voltar" */
+.links-ajuda.voltar {
+    margin-top: 20px;
+    margin-bottom: 0;
+    justify-content: center; /* Centraliza o link de volta */
+}
+
+/* ESTILO DA PÁGINA DE CADASTRO DO USUÁRIO */
+
+/* Estilo para a mensagem de termos e condições */
+.termos {
+    font-size: 12px;
+    color: var(--gray-text);
+    margin-top: -10px; /* Aproxima do campo de senha */
+    margin-bottom: 25px; /* Adiciona espaço antes do botão */
+    text-align: center;
+}
+
+.termos a {
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.termos a:hover {
+    text-decoration: underline;
+}
