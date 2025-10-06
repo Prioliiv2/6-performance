@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário - 6 Six Performance</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Ajuste simples para acomodar mais campos de forma confortável */
+        .login-container {
+            max-width: 450px; /* Pouco mais largo para melhor espaçamento dos campos */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="logo.jpeg" alt="logo" width="100px">
+        
+        <h2>Crie aqui sua conta</h2>
+        
+        <p class="instrucao">
+            Junte-se a nós! É rápido e fácil.
+        </p>
+        
+        <form class="cadastro-form">
+            
+            <div class="input-group">
+                <input type="text" id="name" placeholder="Nome Completo" required>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Seu melhor E-mail" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Crie uma Senha" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="confirm-password" placeholder="Confirme a Senha" required>
+            </div>
+            
+            <p class="termos">
+                Ao clicar em "Cadastrar", você concorda com nossos <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a>.
+            </p>
+            
+            <button type="submit" class="login-button">CADASTRAR</button>
+            
+            <div class="links-ajuda voltar">
+                <a href="index.html">← Já tenho conta (Fazer Login)</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
