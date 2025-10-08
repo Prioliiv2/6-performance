@@ -26,7 +26,6 @@ body {
     background-position: center;
     background-blend-mode: overlay; /* Suaviza a imagem com o fundo */
 }
-
 /* Container principal do formulário de login */
 .login-container {
     background-color: var(--white);
@@ -121,6 +120,13 @@ p {
     border-color: var(--primary-orange);
     box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2); /* Sombra de foco laranja */
     outline: none;
+}
+.input-group img {
+    margin: 1rem;
+    cursor: pointer;
+    position: absolute;
+    left: -9%;
+    bottom: -20%;
 }
 
 /* Links de ajuda (Esqueceu a senha e Cadastre-se) */
